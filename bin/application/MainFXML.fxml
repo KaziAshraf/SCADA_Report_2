@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="934.0" styleClass="mainPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXMLController">
+   <top>
+      <GridPane>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="424.0" minWidth="10.0" prefWidth="424.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="508.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ImageView fitHeight="38.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT">
+               <image>
+                  <Image url="@icons/DPDC_Logo.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="20.0" top="5.0" />
+               </GridPane.margin>
+            </ImageView>
+            <Label alignment="CENTER" prefHeight="32.0" prefWidth="300.0" styleClass="title" text="SCADA DPDC Web Scrapper" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <HBox alignment="TOP_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="805.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="minified_btn" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#control_btn_act" styleClass="controlbtn" text="Button">
+                     <graphic>
+                        <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/004-Minus-512.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="minmax_btn" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#control_btn_act" styleClass="controlbtn" text="Button">
+                     <graphic>
+                        <ImageView fx:id="minmax_img" fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/maximize.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="closebtn" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#control_btn_act" styleClass="controlbtn" text="Button">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/close-button.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </top>
+   <left>
+      <VBox prefHeight="390.0" prefWidth="179.0" style="-fx-background-color: #009688; -fx-background-radius: 10;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="20.0" top="10.0" />
+         </BorderPane.margin>
+         <effect>
+            <DropShadow height="6.17" radius="2.585" width="6.17" />
+         </effect>
+         <children>
+            <Label alignment="CENTER" prefHeight="33.0" prefWidth="179.0" style="-fx-background-color: white;" text="Menu" textFill="#009688" />
+            <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="70.0" prefWidth="179.0" styleClass="menubtn" text="Hourly Demand and Generation">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/time-12-512.png" />
+                     </image>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="exportpdfbtn" contentDisplay="TOP" layoutX="10.0" layoutY="85.0" mnemonicParsing="false" onAction="#control_pdf_action" prefHeight="70.0" prefWidth="179.0" styleClass="menubtn" text="Export as PDF">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/pdf-512.png" />
+                     </image>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="filter_btn" contentDisplay="TOP" layoutX="10.0" layoutY="149.0" mnemonicParsing="false" onAction="#control_btn_act" prefHeight="70.0" prefWidth="179.0" styleClass="menubtn" text="Filter &amp; Search">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/pdf-512.png" />
+                     </image>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 5;">
+         <effect>
+            <DropShadow height="9.14" radius="3.3275" width="6.17" />
+         </effect>
+         <children>
+            <TableView fx:id="table_1" editable="true" prefHeight="459.0" prefWidth="695.0" tableMenuButtonVisible="true">
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin></TableView>
+         </children>
+         <BorderPane.margin>
+            <Insets left="20.0" right="20.0" top="10.0" />
+         </BorderPane.margin>
+      </StackPane>
+   </center>
+   <bottom>
+      <JFXDrawer fx:id="filter_drawer" defaultDrawerSize="50.0" direction="BOTTOM" focusTraversable="true" prefHeight="44.0" prefWidth="934.0" BorderPane.alignment="CENTER">
+         <effect>
+            <DropShadow height="6.17" radius="2.585" width="6.17" />
+         </effect>
+      </JFXDrawer>
+   </bottom>
+   <effect>
+      <DropShadow blurType="GAUSSIAN" />
+   </effect>
+</BorderPane>
